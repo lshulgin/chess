@@ -83,7 +83,6 @@ class Piece:
             return {abs(dest.x - orig.x), abs(dest.y - orig.y)} == {1, 2}
         if piece_type == PIECE.QUEEN:
             return any([Piece._can_move_internal(x, color, orig, dest) for x in [PIECE.ROOK, PIECE.BISHOP]])
-        # Still need to implement captures
         if piece_type == PIECE.PAWN:
             return orig.x == dest.x and \
                    ((color == COLOR.WHITE and (dest.y - orig.y == 1 or orig.y == 1 and dest.y == 3)) or
